@@ -1,0 +1,91 @@
+# Aufgabenverwaltung mit SQLite-Datenbank
+
+## Einführung
+Diese Python-Anwendung demonstriert die Verwendung von SQLite zur Verwaltung von Benutzern und Aufgaben in einer lokalen Datenbank.
+
+## Funktionen
+
+### Benutzerverwaltung
+- **Alle Benutzer anzeigen**: Zeigt alle gespeicherten Benutzer an
+- **Benutzer hinzufügen**: Fügt neuen Benutzer mit Name, E-Mail und Alter hinzu
+- **E-Mail aktualisieren**: Ändert die E-Mail-Adresse eines bestehenden Benutzers
+- **Nach Alter filtern**: Zeigt Benutzer über 25 Jahren
+- **Nach Name suchen**: Sucht Benutzer nach Namen
+
+### Aufgabenverwaltung
+- **Aufgabe hinzufügen**: Erstellt neue Aufgabe mit Titel und Status
+- **Alle Aufgaben anzeigen**: Listet alle vorhandenen Aufgaben auf
+- **Aufgabe erledigen**: Markiert Aufgabe als "erledigt"
+- **Aufgabe löschen**: Entfernt Aufgabe aus der Datenbank
+
+## Datenbankstruktur
+
+### Tabelle `benutzer`
+| Spalte | Typ       | Beschreibung               |
+|--------|-----------|----------------------------|
+| id     | INTEGER   | Primärschlüssel (automatisch) |
+| name   | TEXT      | Name des Benutzers         |
+| email  | TEXT      | E-Mail-Adresse             |
+| age    | INTEGER   | Alter                      |
+
+### Tabelle `aufgaben`
+| Spalte | Typ       | Beschreibung               |
+|--------|-----------|----------------------------|
+| id     | INTEGER   | Primärschlüssel (automatisch) |
+| titel  | TEXT      | Aufgabenbeschreibung       |
+| status | TEXT      | Status ("offen"/"erledigt") |
+
+## Installation
+1. Stellen Sie sicher, dass Python 3.x installiert ist
+2. Keine zusätzlichen Pakete erforderlich (SQLite ist in Python enthalten)
+
+## Verwendung
+1. Speichern Sie den Code als `aufgaben_db.py`
+2. Führen Sie das Skript aus:
+   ```bash
+   python aufgaben_db.py
+   ```
+3. Folgen Sie den Menüanweisungen
+
+## Code-Ausschnitte
+
+### Datenbankinitialisierung
+```python
+def create_database():
+    with sqlite3.connect('aufgaben.db') as conn:
+        cursor = conn.cursor()
+        cursor.execute('''CREATE TABLE IF NOT EXISTS benutzer (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT,
+            email TEXT,
+            age INTEGER
+        )''')
+```
+
+### Benutzer hinzufügen
+```python
+def add_user():
+    name = input("Name: ")
+    email = input("E-Mail: ")
+    age = int(input("Alter: "))
+    with sqlite3.connect('aufgaben.db') as conn:
+        cursor.execute('INSERT INTO benutzer VALUES (?, ?, ?)', (name, email, age))
+```
+
+### Aufgabe als erledigt markieren
+```python
+def mark_task_done():
+    task_id = int(input("ID der Aufgabe: "))
+    with sqlite3.connect('aufgaben.db') as conn:
+        cursor.execute('UPDATE aufgaben SET status = ? WHERE id = ?', ("erledigt", task_id))
+```
+
+## Lernziele
+- Grundlagen von SQLite mit Python
+- CRUD-Operationen (Create, Read, Update, Delete)
+- Datenbanktransaktionen
+- Benutzereingaben mit Datenbankoperationen verbinden
+- Einfache Menüsteuerung
+
+## Lizenz
+MIT-Lizenz - Freie Verwendung und Modifikation erlaubt
