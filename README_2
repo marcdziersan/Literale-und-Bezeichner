@@ -1,0 +1,155 @@
+# Python Grundlagen - Übungsaufgaben Teil 2
+
+## Aufgaben Teil 4: Anweisungsfolgen
+
+### Aufgabe 1: Lineare Anweisungsfolge
+Demonstriert die sequentielle Ausführung von Anweisungen:
+```python
+startwert = 10
+zwischenwert = startwert + 5
+endwert = zwischenwert * 2
+print("Startwert:", startwert)
+print("Zwischenwert:", zwischenwert)
+print("Endwert:", endwert)
+```
+
+## Aufgaben Teil 5: Kontrollstrukturen
+
+### Aufgabe 2: Bedingungen und Verzweigungen
+1. **Gerade/Ungerade Prüfung**
+   ```python
+   if zahl % 2 == 0:
+       print("Die Zahl ist gerade.")
+   else:
+       print("Die Zahl ist ungerade.")
+   ```
+
+2. **Vergleich mit 100**
+   ```python
+   if zahl > 100:
+       print("Die Zahl ist größer als 100.")
+   elif zahl < 100:
+       print("Die Zahl ist kleiner als 100.")
+   else:
+       print("Die Zahl ist gleich 100.")
+   ```
+
+3. **Passwortprüfung**
+   ```python
+   if passwort == korrektes_passwort:
+       print("Passwort korrekt.")
+   else:
+       print("Passwort falsch.")
+   ```
+
+4. **Zahlenbereichsprüfung**
+   ```python
+   if 50 <= zahl <= 100:
+       print("Die Zahl liegt zwischen 50 und 100.")
+   ```
+
+5. **Altersprüfung**
+   ```python
+   if alter >= 18:
+       print("Du darfst Auto fahren.")
+   elif 16 < alter < 18:
+       print("Du darfst einen Führerschein machen.")
+   ```
+
+6. **Zahlenvergleich**
+   ```python
+   if zahl1 == zahl2:
+       print("Die Zahlen sind gleich.")
+   elif zahl1 > zahl2:
+       print("Die erste Zahl ist größer.")
+   else:
+       print("Die zweite Zahl ist größer.")
+   ```
+
+## Aufgaben Teil 6: Print-Ausgaben
+
+### Aufgabe 3: Grundlegende Print-Ausgabe
+```python
+print(f"Name: {name}")
+print(f"Ausbildung: {ausbildung}")
+print(f"Zitat: \"{zitat}\"")
+```
+
+### Aufgabe 4: Escape-Zeichen
+```python
+print("Tab\tTabulator")
+print("Zeilenumbruch\nNeue Zeile")
+```
+
+## Aufgaben Teil 7: Input/Output
+
+### Aufgabe 5: Benutzereingabe
+```python
+name = input("Bitte geben Sie Ihren Namen ein: ")
+alter = input("Bitte geben Sie Ihr Alter ein: ")
+print(f"Hallo {name}, Sie sind {alter} Jahre alt.")
+```
+
+### Aufgabe 6: Eingabevalidierung
+```python
+if eingabe.isdigit():
+    print("Danke! Ihre Eingabe war gültig.")
+else:
+    print("Fehler: Ihre Eingabe ist keine Zahl.")
+```
+
+## Aufgaben Teil 8: Datentypen
+
+### Aufgabe 7: Datentypen
+```python
+print(f"Ganzzahl: {ganzzahl}, Typ: {type(ganzzahl)}")
+print(f"Text: {text}, Typ: {type(text)}")
+```
+
+### Aufgabe 8: Typkonvertierung
+```python
+gleitkomma = float(zahl)
+text = str(zahl)
+```
+
+## Aufgaben Teil 9: Exception Handling
+
+### Aufgabe 9: Fehlerbehandlung
+```python
+try:
+    zahl = int(input("Bitte geben Sie eine Zahl ein: "))
+    ergebnis = zahl / 2
+except ValueError:
+    print("Fehler: Das war keine gültige Zahl.")
+except ZeroDivisionError:
+    print("Warnung: Division durch 0 ist nicht erlaubt.")
+```
+
+### Benutzerdefinierter Fehler
+```python
+try:
+    if zahl < 0:
+        raise ValueError("Negative Zahlen sind nicht erlaubt!")
+except ValueError as e:
+    print("Fehler:", e)
+```
+
+## Anleitung zur Ausführung
+
+1. Speichern Sie den Code in einer Datei namens `Aufgaben_2.py`
+2. Führen Sie die Datei mit Python aus:
+   ```
+   python Aufgaben_2.py
+   ```
+3. Folgen Sie den Anweisungen im Programm
+
+## Lernziele
+
+- Verständnis von Kontrollstrukturen (if/elif/else)
+- Umgang mit Benutzereingaben und Validierung
+- Formatierte Ausgaben mit print()
+- Typkonvertierung und Datentypen
+- Grundlagen der Fehlerbehandlung
+
+## Lizenz
+Dieses Projekt steht unter der MIT-Lizenz.
