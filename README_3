@@ -1,0 +1,168 @@
+# Python Grundlagen - Übungsaufgaben Teil 3: Schleifen und Listen
+
+## Inhaltsverzeichnis
+1. [Kopfgesteuerte Schleifen (while)](#1-kopfgesteuerte-schleifen-while)
+2. [For-Schleifen](#2-for-schleifen)
+3. [Listen und ihre Methoden](#3-listen-und-ihre-methoden)
+4. [For-Schleifen mit Listen](#4-for-schleifen-mit-listen)
+
+---
+
+## 1. Kopfgesteuerte Schleifen (while)
+
+### Aufgabe 1: Zahlen zählen
+```python
+i = 1
+while i <= 10:
+    print(i)
+    i += 1
+```
+*Zählt von 1 bis 10 und gibt jede Zahl aus*
+
+### Aufgabe 2: Benutzereingaben summieren
+```python
+summe = 0
+while True:
+    zahl = int(input("Geben Sie eine Zahl ein (0 zum Beenden): "))
+    if zahl == 0:
+        break
+    summe += zahl
+```
+*Sammelt Zahlen bis zur Eingabe 0 und berechnet die Summe*
+
+### Aufgabe 3: Passwortabfrage
+```python
+richtiges_passwort = "geheim"
+while True:
+    eingabe = input("Bitte geben Sie das Passwort ein: ")
+    if eingabe == richtiges_passwort:
+        print("Passwort korrekt!")
+        break
+```
+*Wiederholt Passwortabfrage bis zur korrekten Eingabe*
+
+---
+
+## 2. For-Schleifen
+
+### Aufgabe 4: Zahlenbereiche
+```python
+for i in range(1, 11):
+    print(i)
+```
+*Gibt Zahlen von 1 bis 10 aus*
+
+### Aufgabe 5: Gerade Zahlen
+```python
+for i in range(2, 21, 2):
+    print(i)
+```
+*Gibt gerade Zahlen von 2 bis 20 aus*
+
+### Aufgabe 6: Verschachtelte Schleifen
+```python
+for i in range(5):
+    for j in range(5):
+        print("*", end="")
+    print()
+```
+*Erzeugt ein 5x5-Rechteck aus Sternen*
+
+### Aufgabe 7: Rückwärts zählen
+```python
+for i in range(10, 0, -1):
+    print(i)
+```
+*Zählt rückwärts von 10 bis 1*
+
+---
+
+## 3. Listen und ihre Methoden
+
+### Aufgabe 8: Listenmanipulation
+```python
+namen = ["Anna", "Max", "Tom", "Lisa"]
+namen.append("Marie")  # Element hinzufügen
+namen.remove("Tom")    # Element entfernen
+```
+*Demonstriert grundlegende Listenoperationen*
+
+### Aufgabe 9: Sortieren
+```python
+zahlen = [5, 3, 8, 1, 2]
+zahlen.sort()          # Aufsteigend
+zahlen.sort(reverse=True)  # Absteigend
+zahlen.reverse()       # Reihenfolge umkehren
+```
+*Zeigt verschiedene Sortiermöglichkeiten*
+
+### Aufgabe 10: Listenmethoden
+```python
+zahlen.append(6)       # Am Ende hinzufügen
+zahlen.insert(0, 0)    # An Position 0 einfügen
+zahlen.count(3)        # Vorkommen zählen
+```
+*Weitere wichtige Listenmethoden*
+
+---
+
+## 4. For-Schleifen mit Listen
+
+### Aufgabe 11: Listeniteration
+```python
+for wert in werte:
+    print(wert)
+```
+*Einfache Iteration über Listenelemente*
+
+### Aufgabe 12: Summierung
+```python
+summe = sum(werte)
+```
+*Berechnet Summe aller Listenelemente*
+
+### Aufgabe 13: String-Iteration
+```python
+for buchstabe in "Hallo":
+    print(buchstabe)
+```
+*Iteriert über Zeichen eines Strings*
+
+### Aufgabe 14: Listenkomprehension
+```python
+gefiltert = [zahl for zahl in zahlen if zahl > 10]
+```
+*Filtert Elemente > 10 mit List Comprehension*
+
+### Aufgabe 15: Indexbasierte Iteration
+```python
+for index in range(len(zahlen)):
+    print(f"Index: {index}, Wert: {zahlen[index]}")
+```
+*Zugriff über Indexpositionen*
+
+### Aufgabe 16: Enumerate-Funktion
+```python
+for index, wert in enumerate(zahlen):
+    print(f"Index: {index}, Wert: {wert}")
+```
+*Elegante Methode für Index-Wert-Paare*
+
+---
+
+## Anleitung zur Ausführung
+1. Speichern Sie den Code als `Aufgaben_3.py`
+2. Führen Sie das Skript aus:
+   ```bash
+   python Aufgaben_3.py
+   ```
+
+## Lernziele
+- Verständnis von Schleifenkonstrukten
+- Umgang mit Listen und ihren Methoden
+- Iterationstechniken über Sequenzen
+- Anwendung von List Comprehensions
+- Indexbasierter Zugriff auf Listen
+
+## Lizenz
+MIT-Lizenz - Freie Verwendung und Modifikation erlaubt
